@@ -2,26 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: 226 96% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 226 96% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 226 96% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 220 100% 33%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 100% 23%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 100% 13%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 100% 13%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 100% 23%;
+    --input: 220 100% 23%;
+    --ring: 220 100% 33%;
+
+    --radius: 0.5rem;
+  }
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+#__next {
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (min-width: 1025px) {
+  html {
+    font-size: 18px;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
