@@ -31,7 +31,7 @@ export default function Signup() {
         throw new Error(errorData.error || "Signup failed");
       }
 
-      const { user } = await response.json();
+      // const { user } = await response.json();
 
       // Create a session after successful signup
       const session = await account.createEmailPasswordSession(email, password);
